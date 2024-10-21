@@ -17,7 +17,10 @@
   (fetch-products
     campaign-id
     (fn [products]
-      (let [clj-products (js->clj-conversion products)]
-        (if (some? clj-products)
-          (set-products clj-products)
+      (let [clj-products (js->clj-conversion products)
+            limited-products (take 10 clj-products)]
+        (if (some? limited-products)
+          (do
+            (set-products limited-products)
+           )
           (js/console.error "Failed to process products"))))))
