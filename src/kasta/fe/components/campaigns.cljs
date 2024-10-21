@@ -8,7 +8,7 @@
                  (load-and-filter-campaigns
                    (fn [data]
                      (reset! (::campaigns state) data)
-                     (js/console.log "Loaded campaigns:" (clj->js @(::campaigns state)))))
+                     ))
                  state) }
   [state]
   (let [campaigns (::campaigns state)]

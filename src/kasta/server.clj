@@ -14,7 +14,7 @@
 
 (mount/defstate server
   :start (let [address (InetSocketAddress. HOST PORT)
-               server  (aleph/start-server #'app/app {:socket-address address})]
+               server  (aleph/start-server #'app/app-with-params {:socket-address address})]
            (log/infof "Started server on http://%s:%s/" HOST PORT)
            server)
   :stop (do

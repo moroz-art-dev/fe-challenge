@@ -1,5 +1,9 @@
 (ns kasta.fe.common.utils)
 
+(defn format-date [date-str]
+  (let [date (js/Date. date-str)]
+    (.toLocaleDateString date #js {:year "numeric" :month "long" :day "numeric"})))
+
 (defn js->clj-conversion [js-obj]
   (if (array? js-obj)
     (js->clj js-obj :keywordize-keys true)
@@ -25,7 +29,6 @@
           :description (:description campaign)
           :starts_at (:starts_at campaign)
           :finishes_at (:finishes_at campaign)
-          :url (:url campaign)
           :id (:id campaign)
           :now_image (:now_image campaign)})
        campaigns))
