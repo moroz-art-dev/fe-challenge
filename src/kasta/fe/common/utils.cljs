@@ -1,7 +1,7 @@
 (ns kasta.fe.common.utils)
 
 (defn js->clj-conversion [js-obj]
-  (if (and (array? js-obj) (every? object? js-obj))
+  (if (array? js-obj)
     (js->clj js-obj :keywordize-keys true)
     []))
 
@@ -18,3 +18,14 @@
              campaigns))
           [])]
     filtered-campaigns))
+
+(defn filter-fields [campaigns]
+  (map (fn [campaign]
+         {:name (:name campaign)
+          :description (:description campaign)
+          :starts_at (:starts_at campaign)
+          :finishes_at (:finishes_at campaign)
+          :url (:url campaign)
+          :id (:id campaign)
+          :now_image (:now_image campaign)})
+       campaigns))

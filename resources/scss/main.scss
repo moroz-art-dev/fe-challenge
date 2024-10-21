@@ -1,3 +1,30 @@
 #content {
   text-align: center;
 }
+
+.campaign-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.banner h2 {
+  font-size: 24px;
+  color: #333;
+}
+
+.banner p {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.banner a {
+  font-size: 16px;
+  color: #007bff;
+  text-decoration: none;
+}
+
+.banner a:hover {
+  text-decoration: underline;
+}

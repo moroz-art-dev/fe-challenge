@@ -29,4 +29,6 @@
                         [figwheel-sidecar "0.5.18"
                          :exclusions [org.clojure/clojurescript
                                       org.apache.maven.wagon/wagon-http
-                                      org.clojure/tools.nrepl]]]}})
+                                      org.clojure/tools.nrepl]]]}}
+
+  :clean-targets ^{:protect false} ["target"])

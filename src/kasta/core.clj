@@ -1,7 +1,6 @@
 (ns kasta.core
   (:require [clojure.tools.logging :as log]
             [clojure.java.io :as io]
-
             [mount.core :as mount]
             [nrepl.server :as nrepl]
             [figwheel-sidecar.repl-api :as ra]
@@ -24,7 +23,7 @@
    :compiler     {:output-to            "target/main.js"
                   :output-dir           "target/main.out"
                   :asset-path           "/static/main.out"
-                  :aot-cache            true
+                  :aot-cache            false
                   :main                 'kasta.fe.start
                   :optimizations        :none
                   :source-map           true
